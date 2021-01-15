@@ -50,22 +50,38 @@ class Team extends React.Component {
 function Game(props) {
   return (
     <div className="Game">
-      <h1>Welcome to {props.venue}</h1>
+      <h1>Welcome to {props.venue}!</h1>
       <div className="stats">
-        <Team name="Dog Basketball Club" logo="./assets/images/dog-basketball.jpg" />
+        <Team name={props.visitingTeam.name} logo={props.visitingTeam.logo} />
         <div className="versus">
           <h1>VS</h1>
         </div>
-        <Team name="Raccoon Basketball" logo="./assets/images/raccoon-basketball.jpg" />
+        <Team name={props.homeTeam.name} logo={props.homeTeam.logo} />
       </div>
     </div>
   );
 }
 function App(props) {
+  const dog = {
+    name: "Dog Basketball Club",
+    logo: "./assets/images/dog-basketball.jpg",
+  };
+  const raccoon = {
+    name: "Raccoon Basketball",
+    logo: "./assets/images/raccoon-basketball.jpg",
+  };
+  const human = {
+    name: "People Basketball",
+    logo: "./assets/images/human-basketball.png",
+  };
+  const bunny = {
+    name: "Bunny National Association",
+    logo: "./assets/images/bunny-basketball.jpg",
+  };
   return (
     <div className="App">
-      <Game venue="AT&T Center!" />
-      <Game venue="AT&T Center!" />
+      <Game venue="Animal Arena" homeTeam={dog} visitingTeam={raccoon} />
+      <Game venue="AT&T Center!" homeTeam={human} visitingTeam={bunny} />
     </div>
   );
 }
