@@ -29,7 +29,7 @@ class Team extends React.Component {
     let shootingPercentageDisplay = "";
     if (this.state.shotsTaken) {
       let percentScore = Math.round((this.state.score / this.state.shotsTaken) * 100);
-      shootingPercentageDisplay = <strong>Shot Percentage: {percentScore}%</strong>;
+      shootingPercentageDisplay = <strong>Shooting %: {percentScore}</strong>;
     }
 
     return (
